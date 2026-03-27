@@ -1,0 +1,111 @@
+
+======================================================================
+K-MEANS CLUSTERING ANALYSIS: PATIENT RISK SEGMENTATION
+======================================================================
+
+PROJECT INFORMATION
+-------------------
+Algorithm: K-Means Clustering (Unsupervised Learning)
+Purpose: Segment patients into risk groups for clinical decision-making
+Dataset: UCI Heart Disease - Cleveland (processed.cleveland.data)
+Total Patients: 297
+Features Used: 14 cardiac health indicators
+
+CLUSTERING RESULTS
+------------------
+Optimal Number of Clusters: 3
+Final Silhouette Score: 0.1298
+  (Score ranges from -1 to 1; higher is better)
+  (Score > 0.5 indicates good cluster separation)
+
+PCA ANALYSIS
+-----------
+Components Used: 3
+Explained Variance:
+  - PC1: 23.70%
+  - PC2: 12.35%
+  - PC3: 9.60%
+  Total: 45.65%
+
+RISK GROUP SEGMENTATION
+-----------------------
+ Risk Group  Cluster ID  Patient Count Percentage Avg Age Avg Heart Rate Avg BP Avg Cholesterol Male Ratio
+   Low Risk           0            117      39.4%    51.0          162.9  129.5           235.2     100.0%
+Medium Risk           1            101      34.0%    58.2          130.0  135.8           252.8      83.2%
+  High Risk           2             79      26.6%    55.2          154.8  129.8           258.5       0.0%
+
+INTERPRETATION GUIDE
+--------------------
+The K-Means algorithm identified 3 natural patient clusters based on 13 cardiac
+health features. These clusters were mapped to clinical risk levels:
+
+• LOW RISK: Patients with healthy cardiac profiles
+• MEDIUM RISK: Patients with some cardiac concerns
+• HIGH RISK: Patients with multiple risk indicators
+
+FEATURES ANALYZED
+-----------------
+• Age (years)
+• Sex (1=Male, 0=Female)
+• Chest Pain Type
+• Resting BP (mm Hg)
+• Serum Cholesterol (mg/dl)
+• Fasting Blood Sugar (1=high, 0=low)
+• Resting ECG Results
+• Max Heart Rate Achieved
+• Exercise Angina (1=yes, 0=no)
+• ST Depression
+• ST Segment Slope
+• Major Vessels (0-3)
+• Thalassemia Type
+
+OUTPUT FILES
+------------
+1. 01_elbow_plot.png
+   - Elbow method visualization showing cluster optimization
+   - Used to determine optimal number of clusters
+
+2. 02_silhouette_analysis.png
+   - Silhouette score plot for cluster quality validation
+   - Higher scores indicate better-defined clusters
+
+3. 03_pca_scatter_3d.png
+   - 3D PCA scatter plot showing cluster separation
+   - Purple stars represent cluster centroids
+
+4. 04_cluster_heatmap.png
+   - Normalized health profile heatmap
+   - Shows average feature values per risk group
+
+5. 05_cluster_summary.csv
+   - Summary statistics for each risk group
+   - Key metrics: size, age, heart rate, blood pressure, cholesterol
+
+6. clustered_patients.csv
+   - Complete dataset with risk group assignments
+   - Can be used for downstream analysis
+
+7. pca_transformed_data.csv
+   - PCA-transformed features with cluster assignments
+   - Useful for visualization and further modeling
+
+CLINICAL APPLICATIONS
+---------------------
+• Risk stratification for targeted interventions
+• Patient monitoring prioritization
+• Personalized treatment planning
+• Public health resource allocation
+• Patient outcome prediction studies
+
+METHODOLOGY NOTES
+-----------------
+• Data Preprocessing: StandardScaler normalization (critical for K-Means)
+• Algorithm: K-Means clustering with k-means++ initialization
+• Optimal K: Determined using Elbow method and Silhouette analysis
+• Validation: Multiple cluster validity metrics applied
+• Random State: Set to 42 for reproducibility
+
+======================================================================
+Analysis completed successfully!
+Generated outputs are saved in: C:\Users\kthis_g\OneDrive\Documents\GitHub\heart-disease-prediction\outputs\kmeans
+======================================================================
