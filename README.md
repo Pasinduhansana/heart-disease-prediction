@@ -50,8 +50,9 @@ This is a machine learning project that predicts heart disease risk and segments
 - **Type**: Supervised Learning (Baseline)
 - **Purpose**: Binary classification (disease / no disease)
 - **Key Task**: Establish baseline model performance
-- **Output**: Probability scores and classification
-- **File**: `src/01_logistic_regression.py`
+- **Output**: Probability scores, classification, and evaluation plots
+- **Files**: `src/data_preprocessing.py`, `src/logistic_regression_model.py`, `src/evaluation.py`
+- **Notebook**: `notebooks/01_logistic_regression_analysis.ipynb`
 
 ### 2. **Random Forest** - Member 2
 - **Type**: Supervised Learning (Ensemble)
@@ -106,8 +107,10 @@ heart-disease-prediction/
 │       ├── heart-disease.README
 │       └── Index
 │
-├── src/                               # Model scripts (one per member)
-│   ├── 01_logistic_regression.py      # Member 1 — Logistic Regression
+├── src/                               # Model scripts and utilities
+│   ├── data_preprocessing.py          # Preprocessing utilities for Member 1
+│   ├── logistic_regression_model.py    # Logistic Regression training for Member 1
+│   ├── evaluation.py                  # Evaluation utilities for Member 1
 │   ├── 02_random_forest.py            # Member 2 — Random Forest ✅
 │   ├── 03_svm_classification.py       # Member 3 — Support Vector Machine
 │   └── 04_kmeans_clustering.py        # Member 4 — K-Means Clustering
@@ -118,6 +121,7 @@ heart-disease-prediction/
 │   ├── svm_model.pkl                  # Member 3 model
 │   └── kmeans_model.pkl               # Member 4 model
 │
+├── results/                           # Generated outputs for Logistic Regression
 ├── outputs/                           # Generated outputs per member
 │   ├── logistic_regression/           # Member 1 outputs
 │   │   ├── confusion_matrix.png
@@ -157,5 +161,15 @@ heart-disease-prediction/
 ```bash
 git clone https://github.com/Yenura/heart-disease-prediction.git
 cd heart-disease-prediction
+```
+
+## Member 1 Contribution
+
+This contribution includes the Logistic Regression pipeline for heart disease prediction:
+- `notebooks/01_logistic_regression_analysis.ipynb` for analysis, training, and evaluation.
+- `src/data_preprocessing.py` for dataset loading, cleaning, type conversion, missing value handling, and binary target conversion.
+- `src/logistic_regression_model.py` for scaling and model training.
+- `src/evaluation.py` for metrics, confusion matrix, ROC curve, and result persistence.
+- `results/` for saved logistic regression outputs.
 
 
