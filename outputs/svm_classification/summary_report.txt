@@ -1,0 +1,19 @@
+Heart Disease Prediction - SVM Classification Summary Report
+====================================================================
+Best Parameters: {'svm__C': 1, 'svm__gamma': 0.01, 'svm__kernel': 'rbf'}
+Best CV ROC-AUC: 0.8982
+Test Accuracy : 0.8525
+Test Precision: 0.8065
+Test Recall   : 0.8929
+Test F1-score : 0.8475
+Test ROC-AUC  : 0.9372
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.82      0.86        33
+           1       0.81      0.89      0.85        28
+
+    accuracy                           0.85        61
+   macro avg       0.85      0.86      0.85        61
+weighted avg       0.86      0.85      0.85        61
